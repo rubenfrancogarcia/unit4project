@@ -24,8 +24,8 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     @Transactional
-    public List<NoteDto> findAllNotesByUser(Long userId) {
-        Optional<User> userOptional = userRepository.findById(userId);
+    public List<NoteDto> findAllNotesByUser(String userName) {
+        Optional<User> userOptional = userRepository.findByUsername(userName);
         if (userOptional.isPresent()) {
             List<Note> noteList = noteRepository.findAllByUserEquals(userOptional.get());
             return noteList.stream().map(NoteDto::new).collect(Collectors.toList());

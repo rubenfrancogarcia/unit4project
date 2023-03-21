@@ -25,9 +25,9 @@ public class NoteController {
     @Autowired
     private NoteRepository noteRepository;
 
-    @GetMapping("/findAllNotesBy/{userId}")
-    public List<NoteDto> findAllNotesByUserId(@PathVariable Long userId){
-        return noteService.findAllNotesByUser(userId);
+    @GetMapping("/findAllNotesBy/{userName}")
+    public List<NoteDto> findAllNotesByUserId(@PathVariable String userName){
+        return noteService.findAllNotesByUser(userName);
     }
 
     @PostMapping("/addNote")

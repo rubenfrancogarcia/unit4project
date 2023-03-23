@@ -26,8 +26,7 @@ const submitNewNoteBtn = document.getElementById( 'submit-note-button' );
 const headers = {
     'Content-Type': 'application/json'
 };
-//search function
-//todo
+
 async function addNote ( )
 {
     let userName = localStorage.getItem('username')
@@ -90,10 +89,10 @@ async function editNote ()
 
 
 /*to get all notes by logged in user*/
+//pagination 
 async function getAllNotes ()
 {
-    let userName = localStorage.getItem( 'username' );
-    userName = "test";
+    let userName = localStorage.getItem( 'username' )
     await fetch( `${ baseUrl }/findAllNotesBy/${ userName }` )
         .then( data => data.json() )
         .then( data =>

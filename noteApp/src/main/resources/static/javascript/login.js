@@ -6,7 +6,7 @@ const headers = {
     'Content-Type': 'application/json'
 };
 
-const baseUrl = 'http:localhost:8080/api/v1/users';
+const baseUrl = '/api/v1/users';
 
 async function handleSubmit ( e )
 {
@@ -17,7 +17,7 @@ async function handleSubmit ( e )
     };
 
 
-    const response = await fetch( '${baseUrl}/login', {
+    const response = await fetch( `${baseUrl}/login`, {
         method: 'POST',
         body: JSON.stringify( bodyObj ),
         headers: headers
@@ -27,10 +27,12 @@ async function handleSubmit ( e )
 
     if ( response.status == 200 )
     {
-        window.location.replace( responseArr[ 0 ] );
+        window.location.assign("./home.html");
         window.localStorage.setItem("username", registerUsername)
     }
 }
 
 registerForm.addEventListener("submit", handleSubmit)
+
+
 

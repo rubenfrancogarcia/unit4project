@@ -10,8 +10,9 @@ public interface NoteService {
     @Transactional
     List<NoteDto> findAllNotesByUser(String userName);
 
+
     @Transactional
-    void addNote(NoteDto noteDto, Long userId);
+    void addNote(NoteDto noteDto, String userName);
 
     @Transactional
     void deleteNote(Long noteId);

@@ -1,0 +1,20 @@
+#loader {
+    margin: auto;
+    border: 20px solid #EAF0F6;
+    border-radius: 50% red;
+    border-top: 20px solid #dc3545;
+    width: 200px;
+    height: 200px;
+    animation: spinner 3s linear infinite;
+    
+  }
+  body{
+    font-size: 6px;
+  }
+
+ 
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

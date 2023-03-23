@@ -31,8 +31,8 @@ public class NoteController {
     }
 
     @PostMapping("/addNote")
-    public void addNote(@RequestBody NoteDto noteDto, @RequestParam Long userId){
-        noteService.addNote(noteDto, userId);
+    public void addNote(@RequestBody NoteDto noteDto, @RequestParam String userName){
+        noteService.addNote(noteDto, userName);
     }
 
     @DeleteMapping("/deleteNote")

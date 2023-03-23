@@ -36,8 +36,8 @@ public class NoteServiceImpl implements NoteService {
 
     @Override
     @Transactional
-    public void addNote(NoteDto noteDto, Long userId) {
-        Optional<User> user = userRepository.findById(userId);
+    public void addNote(NoteDto noteDto, String userName) {
+        Optional<User> user = userRepository.findByUsername(userName);
         Note note = new Note(noteDto);
         if (user.isPresent()) {
             note.setUser(user.get());
